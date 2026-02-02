@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Academics - Happy School</title>
+  <style>
+    /* Global Styles */
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: 'Segoe UI', Arial, sans-serif; line-height: 1.6; color: #333; }
+
+   /* Navbar container */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #0b2344;
+  padding: 10px 20px;
+ 
+}
+
+/* Logo */
+.logo img {
+  height: 40px;
+}
+
+/* Navbar links */
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 15px;
+}
+
+.nav-links li {
+  position: relative;
+}
+
+.nav-links a {
+  color: white;
+  text-decoration: none;
+  padding: 8px 12px;
+  display: block;
+}
+
+/* Dropdown menu */
+.dropdown-menu {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background-color: #0b2344;
+  min-width: 150px;
+  padding: 0;
+  margin: 0;
+  list-style: none;
+  z-index: 1000;
+}
+
+.dropdown-menu li a {
+  padding: 8px 12px;
+}
+
+/* Show dropdown on hover */
+.dropdown:hover .dropdown-menu {
+  display: block;
+}
+
+/* Hover effect */
+.nav-links li a:hover,
+.dropdown-menu li a:hover {
+  background-color: #09203a;
+  border-radius: 4px;
+}
+
+    main { width: 90%; max-width: 1000px; margin: 40px auto; padding: 0 20px; }
+    h1, h2 { color: #0b2344; margin-bottom: 20px; }
+    
+    /* Academic Sections Grid */
+    .academic-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 30px;
+      margin-bottom: 50px;
+    }
+
+    .program-box {
+      background: #fdfdfd;
+      border: 1px solid #eee;
+      padding: 25px;
+      border-radius: 10px;
+      transition: transform 0.3s;
+    }
+
+    .program-box:hover { transform: translateY(-5px); border-color: #004080; }
+    .program-box h3 { color: #004080; margin-bottom: 10px; }
+    .program-box ul { list-style: none; padding-left: 0; }
+    .program-box ul li { margin-bottom: 8px; padding-left: 20px; position: relative; }
+    .program-box ul li::before { content: "✓"; position: absolute; left: 0; color: #004080; font-weight: bold; }
+
+    /* Table Styles */
+    .calendar-container { overflow-x: auto; margin-top: 20px; }
+    table { width: 100%; border-collapse: collapse; margin-top: 10px; }
+    th, td { text-align: left; padding: 12px; border-bottom: 1px solid #ddd; }
+    th { background-color: #0b2344; color: white; }
+    tr:nth-child(even) { background-color: #f9f9f9; }
+
+    /* Footer */
+    footer { background-color: #f2f2f2; padding: 40px 20px; text-align: center; margin-top: 60px; border-top: 3px solid #004080; }
+  </style>
+</head>
+<body>
+
+ <header>
+  <nav class="navbar">
+     <a href="index.html" class="logo"><img src="images/logo.png" alt="Happy School Logo"></a>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li class="dropdown">
+        <a href="">About ↓</a>
+        <ul class="dropdown-menu">
+          <li><a href="about.html">Our School</a></li>
+          <li><a href="staff.html">Staff</a></li>
+          <li><a href="facilities.html">Facilities</a></li>
+        </ul>
+      </li>
+      <li class="dropdown">
+        <a href="">Academics ↓</a>
+        <ul class="dropdown-menu">
+        <li><a href="curriculum.html">Curriculum</a></li>
+        <li><a href="admissions.html">Admissions</a></li>
+        <li><a href="departments.html">Departments</a></li>
+        </ul>
+      </li>
+       <li class="dropdown">
+        <a href="#">More ↓</a>
+        <ul class="dropdown-menu">
+          <li><a href="events.html">Events</a></li>
+          <li><a href="news.html">News</a></li>
+          <li><a href="gallery.html">Gallery</a></li>
+          <li><a href="contact.html">Contact Us</a></li>
+        </ul>
+      </li>
+    </ul>
+  </nav>
+</header>
+
+  <main>
+    <section>
+      <h1>Our Academic Programs</h1>
+      <p style="margin-bottom: 30px;">At Happy School, we follow a competency-based curriculum designed to nurture critical thinking and practical skills. Our programs are divided into three key stages:</p>
+      
+      <div class="academic-grid">
+        <div class="program-box">
+          <h3>Primary School (Grades 1-8)</h3>
+          <p>Focusing on foundational literacy, numeracy, and social skills.</p>
+          <ul>
+            <li>CBC Integration</li>
+            <li>Foreign Languages (French/German)</li>
+            <li>Digital Literacy Classes</li>
+          </ul>
+        </div>
+
+        <div class="program-box">
+          <h3>Secondary School (Form 1-4)</h3>
+          <p>Preparing students for higher education and professional career paths.</p>
+          <ul>
+            <li>Science & Mathematics Streams</li>
+            <li>Humanities & Social Sciences</li>
+            <li>Business & Technical Studies</li>
+          </ul>
+        </div>
+
+        <div class="program-box">
+          <h3>Enrichment Programs</h3>
+          <p>Developing the "Whole Child" beyond the traditional classroom.</p>
+          <ul>
+            <li>STEM & Robotics Club</li>
+            <li>Music, Drama & Creative Arts</li>
+            <li>Competitive Sports & Athletics</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <h2>Academic Calendar 2026</h2>
+      <p>Stay informed about important dates and term breaks.</p>
+      <div class="calendar-container">
+        <table>
+          <thead>
+            <tr>
+              <th>Event</th>
+              <th>Date</th>
+              <th>Description</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Term 1 Begins</td>
+              <td>January 6, 2026</td>
+              <td>Opening day for all students</td>
+            </tr>
+            <tr>
+              <td>Half-Term Break</td>
+              <td>February 15 - 20, 2026</td>
+              <td>Mid-term rest period</td>
+            </tr>
+            <tr>
+              <td>Term 1 Exams</td>
+              <td>March 25 - April 3, 2026</td>
+              <td>End of term evaluations</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2026 Happy School. All Rights Reserved.</p>
+    <p>Contact: info@happyschool.com | +254 700 000000</p>
+    <p>123 Education Road, Nairobi, Kenya</p>
+  </footer>
+
+</body>
+</html>

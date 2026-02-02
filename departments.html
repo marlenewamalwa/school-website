@@ -1,0 +1,375 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Departments | Happy School</title>
+  <style>
+    /* Global Styles */
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background: #f9f9f9; color: #333; }
+    
+   /* Navbar container */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #0b2344;
+  padding: 10px 20px;
+ 
+}
+
+/* Logo */
+.logo img {
+  height: 40px;
+}
+
+/* Navbar links */
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 15px;
+}
+
+.nav-links li {
+  position: relative;
+}
+
+.nav-links a {
+  color: white;
+  text-decoration: none;
+  padding: 8px 12px;
+  display: block;
+}
+
+/* Dropdown menu */
+.dropdown-menu {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background-color: #0b2344;
+  min-width: 150px;
+  padding: 0;
+  margin: 0;
+  list-style: none;
+  z-index: 1000;
+}
+
+.dropdown-menu li a {
+  padding: 8px 12px;
+}
+
+/* Show dropdown on hover */
+.dropdown:hover .dropdown-menu {
+  display: block;
+}
+
+/* Hover effect */
+.nav-links li a:hover,
+.dropdown-menu li a:hover {
+  background-color: #09203a;
+  border-radius: 4px;
+}
+
+    /* Department Grid */
+    .dept-container {
+      max-width: 1100px;
+      margin: -40px auto 60px;
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+      padding: 0 20px;
+    }
+
+    .dept-item {
+      background: white;
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+      border-left: 8px solid #004080;
+    }
+
+    /* Header for each Dept */
+    .dept-header {
+      padding: 25px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      cursor: pointer;
+      transition: background 0.3s;
+    }
+
+    .dept-header:hover { background: #f0f7ff; }
+
+    .dept-title { display: flex; align-items: center; gap: 20px; }
+    .dept-icon { font-size: 2em; }
+    .dept-title h2 { color: #004080; font-size: 1.4em; }
+
+    /* Hidden Content */
+    .dept-content {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.4s ease-out;
+      background: #fff;
+    }
+
+    .dept-content.open { max-height: 800px; border-top: 1px solid #eee; }
+
+    .dept-inner {
+      padding: 30px;
+      display: grid;
+      grid-template-columns: 1.5fr 1fr;
+      gap: 40px;
+    }
+
+    .curriculum-list { list-style: none; }
+    .curriculum-list li {
+      padding: 8px 0;
+      border-bottom: 1px solid #eee;
+      display: flex;
+      justify-content: space-between;
+    }
+
+    .curriculum-list li span { font-weight: bold; color: #004080; }
+
+    .spotlight-box {
+      background: #e6f2ff;
+      padding: 20px;
+      border-radius: 8px;
+    }
+
+    .spotlight-box h4 { color: #004080; margin-bottom: 10px; }
+
+    /* Custom Colors for specific departments */
+    .dept-item.science { border-left-color: #27ae60; }
+    .dept-item.arts { border-left-color: #e67e22; }
+    .dept-item.humanities { border-left-color: #9b59b6; }
+
+    footer { background-color: #f2f2f2; padding: 40px 20px; text-align: center; border-top: 3px solid #004080; }
+
+    @media (max-width: 768px) {
+      .dept-inner { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+    <header>
+  <nav class="navbar">
+     <a href="index.html" class="logo"><img src="images/logo.png" alt="Happy School Logo"></a>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li class="dropdown">
+        <a href="">About ↓</a>
+        <ul class="dropdown-menu">
+          <li><a href="about.html">Our School</a></li>
+          <li><a href="staff.html">Staff</a></li>
+          <li><a href="facilities.html">Facilities</a></li>
+        </ul>
+      </li>
+      <li class="dropdown">
+        <a href="">Academics ↓</a>
+        <ul class="dropdown-menu">
+        <li><a href="curriculum.html">Curriculum</a></li>
+        <li><a href="admissions.html">Admissions</a></li>
+        <li><a href="departments.html">Departments</a></li>
+        </ul>
+      </li>
+       <li class="dropdown">
+        <a href="#">More ↓</a>
+        <ul class="dropdown-menu">
+          <li><a href="events.html">Events</a></li>
+          <li><a href="news.html">News</a></li>
+          <li><a href="gallery.html">Gallery</a></li>
+          <li><a href="contact.html">Contact Us</a></li>
+        </ul>
+      </li>
+    </ul>
+  </nav>
+</header>
+
+  <main>
+    <h1 style="text-align: center; margin: 40px 0; color: #004080;">Academic Departments</h1>
+    <div class="dept-container">
+    
+    <div class="dept-item science">
+      <div class="dept-header" onclick="toggleDept(this)">
+        <div class="dept-title">
+          <span class="dept-icon"></span>
+          <div>
+            <h2>Science & Technology</h2>
+            <small>Fostering innovation and inquiry</small>
+          </div>
+        </div>
+        <span>▼</span>
+      </div>
+      <div class="dept-content">
+        <div class="dept-inner">
+          <div class="info">
+            <h3>Overview</h3>
+            <p>Our STEM department focuses on hands-on learning, where students engage in practical experiments from Year 1 through Graduation.</p>
+            <br>
+            <ul class="curriculum-list">
+              <li>Biology <span>A-Level / IGCSE</span></li>
+              <li>Robotics Club <span>Extracurricular</span></li>
+              <li>Computer Science <span>Python & Web</span></li>
+            </ul>
+          </div>
+          <div class="spotlight-box">
+            <h4>Department Spotlight</h4>
+            <p>"The annual Science Fair allows our students to present real-world solutions to global climate issues."</p>
+            <br>
+            <strong>Head of Dept:</strong> Dr. Sarah Jenkins
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="dept-item">
+      <div class="dept-header" onclick="toggleDept(this)">
+        <div class="dept-title">
+          <span class="dept-icon"></span>
+          <div>
+            <h2>Mathematics</h2>
+            <small>Logic, patterns, and problem solving</small>
+          </div>
+        </div>
+        <span>▼</span>
+      </div>
+      <div class="dept-content">
+        <div class="dept-inner">
+          <div class="info">
+            <h3>Overview</h3>
+            <p>We build a strong foundation in numeracy while challenging advanced learners with competitive math olympiads.</p>
+            <br>
+            <ul class="curriculum-list">
+              <li>Algebra & Geometry <span>Core</span></li>
+              <li>Statistics <span>Advanced</span></li>
+              <li>Calculus <span>Year 12-13</span></li>
+            </ul>
+          </div>
+          <div class="spotlight-box">
+            <h4>Success Stories</h4>
+            <p>95% of our students achieved 'A' or 'A*' in International Mathematics last year.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="dept-item arts">
+      <div class="dept-header" onclick="toggleDept(this)">
+        <div class="dept-title">
+          <span class="dept-icon"></span>
+          <div>
+            <h2>Creative & Performing Arts</h2>
+            <small>Expressing the imagination</small>
+          </div>
+        </div>
+        <span>▼</span>
+      </div>
+      <div class="dept-content">
+        <div class="dept-inner">
+          <div class="info">
+            <h3>Overview</h3>
+            <p>From fine arts to theatrical performances, we encourage every child to find their unique voice.</p>
+            <br>
+            <ul class="curriculum-list">
+              <li>Visual Arts <span>Studio Based</span></li>
+              <li>Music Theory <span>Instrumental</span></li>
+              <li>Drama <span>Annual Play</span></li>
+            </ul>
+          </div>
+          <div class="spotlight-box">
+            <h4>Facilities</h4>
+            <p>Students have access to a dedicated pottery kiln and a digital music production suite.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="dept-item">
+      <div class="dept-header" onclick="toggleDept(this)">
+        <div class="dept-title">
+          <span class="dept-icon"></span>
+          <div>
+            <h2>Mathematics</h2>
+            <small>Logic, patterns, and problem solving</small>
+          </div>
+        </div>
+        <span>▼</span>
+      </div>
+      <div class="dept-content">
+        <div class="dept-inner">
+          <div class="info">
+            <h3>Overview</h3>
+            <p>We build a strong foundation in numeracy while challenging advanced learners with competitive math olympiads.</p>
+            <br>
+            <ul class="curriculum-list">
+              <li>Algebra & Geometry <span>Core</span></li>
+              <li>Statistics <span>Advanced</span></li>
+              <li>Calculus <span>Year 12-13</span></li>
+            </ul>
+          </div>
+          <div class="spotlight-box">
+            <h4>Success Stories</h4>
+            <p>95% of our students achieved 'A' or 'A*' in International Mathematics last year.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="dept-item">
+      <div class="dept-header" onclick="toggleDept(this)">
+        <div class="dept-title">
+          <span class="dept-icon"></span>
+          <div>
+            <h2>Mathematics</h2>
+            <small>Logic, patterns, and problem solving</small>
+          </div>
+        </div>
+        <span>▼</span>
+      </div>
+      <div class="dept-content">
+        <div class="dept-inner">
+          <div class="info">
+            <h3>Overview</h3>
+            <p>We build a strong foundation in numeracy while challenging advanced learners with competitive math olympiads.</p>
+            <br>
+            <ul class="curriculum-list">
+              <li>Algebra & Geometry <span>Core</span></li>
+              <li>Statistics <span>Advanced</span></li>
+              <li>Calculus <span>Year 12-13</span></li>
+            </ul>
+          </div>
+          <div class="spotlight-box">
+            <h4>Success Stories</h4>
+            <p>95% of our students achieved 'A' or 'A*' in International Mathematics last year.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </main>
+
+  <footer>
+    <p>&copy; 2026 Happy School. Excellence in every discipline.</p>
+  </footer>
+
+  <script>
+    function toggleDept(header) {
+      const content = header.nextElementSibling;
+      const arrow = header.querySelector('span:last-child');
+      
+      // Close others (Optional: comment out if you want multiple open)
+      document.querySelectorAll('.dept-content').forEach(c => {
+        if (c !== content) c.classList.remove('open');
+      });
+
+      // Toggle current
+      content.classList.toggle('open');
+      arrow.style.transform = content.classList.contains('open') ? 'rotate(180deg)' : 'rotate(0deg)';
+    }
+  </script>
+
+</body>
+</html>
