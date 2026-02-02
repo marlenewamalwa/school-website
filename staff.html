@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Our Staff | Happy School</title>
+  <style>
+    /* Reuse your Global Styles */
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; line-height: 1.6; color: #333; }
+    
+    header { background-color: #0b2344; color: white; padding: 20px 0; }
+    .header-container { width: 90%; max-width: 1200px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; }
+    nav ul { list-style: none; display: flex; gap: 30px; }
+    nav ul li a { color: white; text-decoration: none; font-weight: 500; }
+
+    /* Staff Header */
+    .staff-hero {
+      background: #e6f2ff;
+      padding: 60px 20px;
+      text-align: center;
+      margin-bottom: 40px;
+    }
+    .staff-hero h1 { color: #004080; font-size: 2.5em; margin-bottom: 10px; }
+
+    /* Category Filter Interaction */
+    .filter-container {
+      text-align: center;
+      margin-bottom: 40px;
+    }
+    .filter-btn {
+      padding: 10px 25px;
+      margin: 5px;
+      border: 2px solid #004080;
+      background: transparent;
+      color: #004080;
+      cursor: pointer;
+      border-radius: 25px;
+      font-weight: bold;
+      transition: 0.3s;
+    }
+    .filter-btn.active, .filter-btn:hover {
+      background: #004080;
+      color: white;
+    }
+
+    /* Staff Grid */
+    .staff-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+      gap: 30px;
+      max-width: 1200px;
+      margin: 0 auto 60px;
+      padding: 0 20px;
+    }
+
+    .staff-card {
+      position: relative;
+      background: #fff;
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+      transition: transform 0.3s ease;
+    }
+
+    .staff-card:hover {
+      transform: translateY(-10px);
+    }
+
+    .staff-img {
+      width: 100%;
+      height: 320px;
+      object-fit: cover;
+      display: block;
+    }
+
+    .staff-info {
+      padding: 20px;
+      text-align: center;
+    }
+
+    .staff-info h3 { color: #004080; margin-bottom: 5px; }
+    .staff-info p { color: #666; font-size: 0.9em; font-weight: bold; text-transform: uppercase; }
+
+    /* Overlay Interaction */
+    .staff-overlay {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 320px;
+      background: rgba(0, 64, 128, 0.9);
+      color: white;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      padding: 20px;
+      opacity: 0;
+      transition: opacity 0.3s ease;
+      text-align: center;
+    }
+
+    .staff-card:hover .staff-overlay {
+      opacity: 1;
+    }
+
+    .staff-overlay p { font-style: italic; margin-bottom: 15px; }
+
+    footer { background-color: #f2f2f2; padding: 40px 20px; text-align: center; border-top: 3px solid #004080; }
+  </style>
+</head>
+<body>
+
+  <header>
+    <div class="header-container">
+      <div class="logo">Happy School</div>
+      <nav>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="staff.html">Staff</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <section class="staff-hero">
+    <h1>Meet Our Educators</h1>
+    <p>A team of dedicated professionals committed to your child's success.</p>
+  </section>
+
+  <div class="filter-container">
+    <button class="filter-btn active" onclick="filterStaff('all')">All Staff</button>
+    <button class="filter-btn" onclick="filterStaff('leadership')">Leadership</button>
+    <button class="filter-btn" onclick="filterStaff('primary')">Primary</button>
+    <button class="filter-btn" onclick="filterStaff('secondary')">Secondary</button>
+  </div>
+
+  <main class="staff-grid" id="staffGrid">
+    <div class="staff-card leadership">
+      <div class="staff-overlay">
+        <p>"Education is the most powerful weapon which you can use to change the world."</p>
+        <span>15+ Years Experience</span>
+      </div>
+      <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=400&h=500&fit=crop" alt="Principal" class="staff-img">
+      <div class="staff-info">
+        <h3>Dr. Sarah Jenkins</h3>
+        <p>School Principal</p>
+      </div>
+    </div>
+
+    <div class="staff-card primary">
+      <div class="staff-overlay">
+        <p>"I love making mathematics fun and accessible for every young mind."</p>
+        <span>Math Specialist</span>
+      </div>
+      <img src="https://images.unsplash.com/photo-1544717297-fa154da09f9b?w=400&h=500&fit=crop" alt="Teacher" class="staff-img">
+      <div class="staff-info">
+        <h3>Mr. David Kalu</h3>
+        <p>Head of Primary</p>
+      </div>
+    </div>
+
+    <div class="staff-card secondary">
+      <div class="staff-overlay">
+        <p>"Fostering a love for literature and critical thinking in our students."</p>
+        <span>English Literature</span>
+      </div>
+      <img src="https://images.unsplash.com/photo-1580894732444-8ecded7900cd?w=400&h=500&fit=crop" alt="Teacher" class="staff-img">
+      <div class="staff-info">
+        <h3>Ms. Elena Rodriguez</h3>
+        <p>Secondary Teacher</p>
+      </div>
+    </div>
+  </main>
+
+  <footer>
+    <p>&copy; 2026 Happy School Staff Directory</p>
+  </footer>
+
+  <script>
+    function filterStaff(category) {
+      const cards = document.querySelectorAll('.staff-card');
+      const buttons = document.querySelectorAll('.filter-btn');
+
+      // Update active button
+      buttons.forEach(btn => btn.classList.remove('active'));
+      event.target.classList.add('active');
+
+      // Show/Hide cards
+      cards.forEach(card => {
+        if (category === 'all' || card.classList.contains(category)) {
+          card.style.display = 'block';
+        } else {
+          card.style.display = 'none';
+        }
+      });
+    }
+  </script>
+
+</body>
+</html>

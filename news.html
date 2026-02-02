@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>News - Happy School</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; line-height: 1.6; color: #333; background-color: #f9f9f9; }
+
+    /* Header Styles */
+    header { background-color: #0b2344; color: white; padding: 20px 0; }
+    .header-container { width: 90%; max-width: 1200px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; }
+    .logo img { height: 50px; }
+    nav ul { list-style: none; display: flex; gap: 20px; }
+    nav ul li a { color: white; text-decoration: none; font-weight: 500; font-size: 0.9em; transition: 0.3s; }
+    nav ul li a:hover { color: #e67e22; }
+
+    /* Layout Structure */
+    main { width: 95%; max-width: 1200px; margin: 40px auto; }
+    h1 { text-align: center; color: #0b2344; margin-bottom: 40px; font-size: 2.5em; }
+
+    /* The News Grid */
+    .news-grid {
+      display: grid;
+      grid-template-columns: 2fr 1fr;
+      gap: 30px;
+    }
+
+    .sidebar {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
+
+    /* News Article Styling */
+    .news-article {
+      background: #fff;
+      border-radius: 8px;
+      overflow: hidden;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+      border: 1px solid #eee;
+      display: flex;
+      flex-direction: column;
+      transition: transform 0.3s ease;
+    }
+    .news-article:hover { transform: translateY(-5px); }
+
+    /* Main Article Specifics */
+    .featured-article .news-image {
+      height: 400px;
+      background-size: cover;
+      background-position: center;
+    }
+    
+    /* Sidebar Article Specifics */
+    .sidebar .news-article { flex-direction: row; height: 120px; }
+    .sidebar .news-image {
+      width: 140px;
+      min-width: 140px;
+      background-size: cover;
+      background-position: center;
+    }
+
+    .news-content {
+      padding: 20px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+
+    .news-date { color: #e67e22; font-size: 0.8em; font-weight: bold; text-transform: uppercase; }
+    .news-content h2 { color: #0b2344; margin: 5px 0; font-size: 1.4em; line-height: 1.2; }
+    .news-content p { color: #666; font-size: 0.95em; margin-top: 10px; }
+    .read-more { color: #004080; text-decoration: none; font-weight: bold; font-size: 0.85em; margin-top: 15px; }
+
+    /* Newsletter Box */
+    .newsletter-box {
+      background: #0b2344;
+      color: white;
+      padding: 25px;
+      border-radius: 8px;
+      text-align: center;
+    }
+    .newsletter-box h3 { margin-bottom: 10px; }
+    .newsletter-box input {
+      width: 100%;
+      padding: 10px;
+      margin: 10px 0;
+      border-radius: 4px;
+      border: none;
+    }
+    .newsletter-box button {
+      background: #e67e22;
+      color: white;
+      border: none;
+      padding: 10px 20px;
+      width: 100%;
+      border-radius: 4px;
+      cursor: pointer;
+      font-weight: bold;
+    }
+
+    /* Responsive */
+    @media (max-width: 900px) {
+      .news-grid { grid-template-columns: 1fr; }
+      .sidebar .news-article { height: auto; }
+    }
+
+   /* Footer */
+    footer { background-color: #f2f2f2; padding: 40px 20px; text-align: center; margin-top: 60px; border-top: 3px solid #004080; }
+    footer p { margin: 10px 0; color: #666; }
+    footer p:first-child { font-weight: bold; color: #004080; }
+  </style>
+</head>
+<body>
+
+ <header id="header">
+    <div class="header-container">
+      <a href="index.html" class="logo"><img src="images/logo.png" alt="Happy School Logo"></a>
+      <nav>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="academics.html">Academics</a></li>
+          <li><a href="admissions.html">Admissions</a></li>
+          <li><a href="news.html">News</a></li>
+          <li><a href="events.html">Events</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <h1>School News & Updates</h1>
+
+    <div class="news-grid">
+      <article class="news-article featured-article">
+        <div class="news-image" style="background-image: url('images/awards.jpg');"></div>
+        <div class="news-content">
+          <span class="news-date">January 28, 2026</span>
+          <h2>Happy School Wins Regional Science Fair</h2>
+          <p>Our Grade 10 students took home the gold last weekend with their innovative project on sustainable water filtration systems. This victory marks our third consecutive year as regional champions.</p>
+          <a href="#" class="read-more">Read Full Story →</a>
+        </div>
+      </article>
+
+      <div class="sidebar">
+        <article class="news-article">
+          <div class="news-image" style="background-image: url('images/library.jpg');"></div>
+          <div class="news-content">
+            <span class="news-date">Jan 15</span>
+            <h2>New Library Complex Open</h2>
+            <a href="#" class="read-more">View Photos →</a>
+          </div>
+        </article>
+
+        <article class="news-article">
+          <div class="news-image" style="background-image: url('images/orientation.jpg');"></div>
+          <div class="news-content">
+            <span class="news-date">Jan 05</span>
+            <h2>Term 1 Orientation</h2>
+            <a href="#" class="read-more">Read More →</a>
+          </div>
+        </article>
+
+        <div class="newsletter-box">
+          <h3>Stay Updated</h3>
+          <p>Get the latest school news sent to your inbox.</p>
+          <input type="email" placeholder="Enter your email">
+          <button>Subscribe Now</button>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <footer>
+    <p>&copy; 2026 Happy School. All Rights Reserved.</p>
+    <p>Contact: info@happyschool.com | +254 700 000000</p>
+  </footer>
+
+</body>
+</html>

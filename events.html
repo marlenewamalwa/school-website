@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Upcoming Events - Happy School</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; line-height: 1.6; color: #333; }
+
+    /* Header Styles */
+    header { background-color: #0b2344; color: white; padding: 20px 0; }
+    .header-container { width: 90%; max-width: 1200px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; }
+    .logo img { height: 50px; }
+    nav ul { list-style: none; display: flex; gap: 30px; }
+    nav ul li a { color: white; text-decoration: none; font-weight: 500; }
+
+    main { width: 90%; max-width: 1200px; margin: 40px auto; padding: 0 20px; }
+    h1 { color: #0b2344; margin-bottom: 30px; border-bottom: 2px solid #f1c40f; display: inline-block; padding-bottom: 5px; }
+
+    /* Event Card Grid */
+    .events-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+      gap: 25px;
+    }
+
+    .event-card {
+      background: #fff;
+      border: 1px solid #ddd;
+      border-radius: 8px;
+      overflow: hidden;
+      transition: box-shadow 0.3s ease;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .event-card:hover { box-shadow: 0 10px 20px rgba(0,0,0,0.1); }
+
+    .event-date-badge {
+      background: #0b2344;
+      color: #fff;
+      padding: 10px;
+      text-align: center;
+      font-weight: bold;
+      text-transform: uppercase;
+      font-size: 0.9em;
+    }
+
+    .event-content { padding: 20px; flex-grow: 1; }
+    .event-category {
+      color: #e67e22;
+      font-size: 0.8em;
+      font-weight: bold;
+      text-transform: uppercase;
+      margin-bottom: 5px;
+      display: block;
+    }
+
+    .event-content h3 { color: #004080; margin-bottom: 10px; }
+    .event-details { font-size: 0.9em; color: #666; margin-bottom: 15px; }
+    
+    .btn-details {
+      display: inline-block;
+      padding: 8px 15px;
+      background: #0b2344;
+      color: white;
+      text-decoration: none;
+      border-radius: 4px;
+      font-size: 0.85em;
+      align-self: flex-start;
+    }
+
+    /* Footer */
+    footer { background-color: #f2f2f2; padding: 40px 20px; text-align: center; margin-top: 60px; border-top: 3px solid #004080; }
+    footer p { margin: 10px 0; color: #666; }
+    footer p:first-child { font-weight: bold; color: #004080; }
+  </style>
+</head>
+<body>
+
+  <header id="header">
+    <div class="header-container">
+      <a href="index.html" class="logo"><img src="images/logo.png" alt="Happy School Logo"></a>
+      <nav>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="academics.html">Academics</a></li>
+          <li><a href="admissions.html">Admissions</a></li>
+          <li><a href="news.html">News</a></li>
+          <li><a href="events.html">Events</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <h1>School Events Calendar 2026</h1>
+    
+    <div class="events-grid">
+      <div class="event-card">
+        <div class="event-date-badge">Feb 14, 2026</div>
+        <div class="event-content">
+          <span class="event-category">Sports</span>
+          <h3>Annual Inter-House Sports Day</h3>
+          <p class="event-details">Location: Main Sports Complex | Time: 8:00 AM</p>
+          <p>Join us for a day of track and field events as our houses compete for the Championship Trophy.</p>
+        </div>
+      </div>
+
+      <div class="event-card">
+        <div class="event-date-badge">Mar 05, 2026</div>
+        <div class="event-content">
+          <span class="event-category">Academic</span>
+          <h3>Science & STEM Fair</h3>
+          <p class="event-details">Location: School Hall | Time: 10:00 AM</p>
+          <p>Explore innovative projects and inventions created by our talented students across all grades.</p>
+        </div>
+      </div>
+
+      <div class="event-card">
+        <div class="event-date-badge">Apr 12, 2026</div>
+        <div class="event-content">
+          <span class="event-category">Community</span>
+          <h3>Parent-Teacher Conference</h3>
+          <p class="event-details">Location: Classrooms | Time: All Day</p>
+          <p>One-on-one sessions to discuss student progress and set academic goals for Term 2.</p>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <footer>
+    <p>&copy; 2026 Happy School. All Rights Reserved.</p>
+    <p>Contact: info@happyschool.com | +254 700 000000</p>
+    <p>123 Education Road, Nairobi, Kenya</p>
+  </footer>
+
+</body>
+</html>
