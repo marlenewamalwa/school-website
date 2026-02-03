@@ -93,7 +93,20 @@
     
     .send-btn { background-color: #0b2344; color: white; padding: 12px 25px; border: none; border-radius: 4px; cursor: pointer; font-weight: bold; width: 100%; transition: background 0.3s; }
     .send-btn:hover { background-color: #004080; }
-
+ 
+    .btn-email {
+    background: #f1c40f;
+      color: #0b2344;
+      padding: 9px 20px;
+      border: none;
+      font-weight: bold;
+      cursor: pointer;
+      text-transform: uppercase;
+  }
+  .btn-email:hover {
+    background: #1447c7;
+  }
+  
     /* Map Placeholder */
     .map-container { grid-column: 1 / -1; margin-top: 30px; height: 350px; background: #e5e3df; border-radius: 8px; display: flex; align-items: center; justify-content: center; color: #777; border: 1px solid #ddd; }
 
@@ -180,7 +193,9 @@
           <label for="message">Message</label>
           <textarea id="message" rows="5" placeholder="Type your message here..." required></textarea>
         </div>
-        <button type="submit" class="send-btn">Send Message</button>
+        <a class="btn-email" href="mailto:hello@schoolpitch.com">
+  Email Admissions
+</a>
       </form>
     </section>
 

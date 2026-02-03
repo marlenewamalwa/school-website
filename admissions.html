@@ -119,16 +119,19 @@
       border-radius: 4px;
       border: none;
     }
-    .submit-btn {
-      background: #f1c40f;
+     .btn-email {
+    background: #f1c40f;
       color: #0b2344;
-      padding: 12px 25px;
+      padding: 9px 20px;
       border: none;
       font-weight: bold;
       cursor: pointer;
       text-transform: uppercase;
-    }
-
+  }
+  .btn-email:hover {
+    background: #1447c7;
+  }
+  
     /* Footer */
     footer { background-color: #f2f2f2; padding: 40px 20px; text-align: center; margin-top: 60px; border-top: 3px solid #004080; }
   </style>
@@ -219,7 +222,9 @@
           <label>Phone Number</label>
           <input type="tel" placeholder="+254..." required>
         </div>
-        <button type="submit" class="submit-btn">Request Prospectus</button>
+       <a class="btn-email" href="mailto:hello@schoolpitch.com">
+  Email Admissions
+</a>
       </form>
     </section>
   </main>
